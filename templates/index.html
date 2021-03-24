@@ -22,25 +22,27 @@ function FbotonOn() {
   var uno = document.getElementById('LED1');
   if (uno.innerHTML == 'Apagado') 
       uno.innerHTML = 'Encendido';
-  else uno.innerHTML = 'Apagado';	
+	LED1_On();
+  else uno.innerHTML = 'Apagado';
+	LED1_Off();
 }
 	
 	
-/*function LED1_On() {
+function LED1_On() {
 	//alert("led on");
 	message = new Paho.MQTT.Message("encender");
     	message.destinationName = "jairo.silva@unach.edu.ec/test1";
     	client.send(message);
 	console.log("led on");
   
-}*/
-/*function LED1_Off(){
+}
+function LED1_Off(){
 	//alert("led off");
 	message = new Paho.MQTT.Message("apagar");
     	message.destinationName = "jairo.silva@unach.edu.ec/test1";
     	client.send(message);
 	console.log("led off");
-}*/
+}
 
 </script>
 </body>
