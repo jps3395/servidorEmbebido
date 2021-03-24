@@ -11,10 +11,10 @@
 <img src="/static/images/iot.png" alt="user">
 <h1>Sensor:</h><h id="sensor">**</h1>	
 <button id = 'LED1'type="button" onclick="FbotonOn();">
-/*LED1 ON!</button>*/
+LED1 ON!</button>
 
 	/*<button id = 'LED1Off' type="button" onclick="LED1_Off();">
-LED1_OFF!</button>*/
+LED1_OFF!</button>
 
 <script>
 
@@ -22,14 +22,7 @@ function FbotonOn() {
   var uno = document.getElementById('LED1');
   if (uno.innerHTML == 'off') 
       uno.innerHTML = 'on';
-	message = new Paho.MQTT.Message("encender");
-    	message.destinationName = "jairo.silva@unach.edu.ec/test1";
-    	client.send(message);
-  else uno.innerHTML = 'off';
-	message = new Paho.MQTT.Message("apagar");
-    	message.destinationName = "jairo.silva@unach.edu.ec/test1";
-    	client.send(message);
-	console.log("led off");	
+  else uno.innerHTML = 'off';	
 }
 	
 	
