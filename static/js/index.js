@@ -17,7 +17,7 @@
 
 
 function prueba(){
-	onMessageArrived();
+	document.getElementById("sensor").innerHTML=onMessageArrived();
 }
 
 
