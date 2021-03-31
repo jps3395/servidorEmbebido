@@ -17,7 +17,9 @@
 
 
 function prueba(){
-	document.getElementById("sensor").innerHTML=onMessageArrived(message).payloadString;
+	message = new Paho.MQTT.Message("historial");
+    	message.destinationName = "jairo.silva@unach.edu.ec/test1";
+   	client.send(message);
 }
 
 
@@ -65,5 +67,6 @@ function prueba(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
   
