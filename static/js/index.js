@@ -16,13 +16,12 @@
 //}*/
 
 
-function prueba(){
-	message = new Paho.MQTT.Message("historial");
+function HISTORIAL_SENSOR(){
+	document.getElementById("sensor").innerHTML=client.historial;
+	message = new Paho.MQTT.Message("ON");
     	message.destinationName = "jairo.silva@unach.edu.ec/test1";
    	client.send(message);
 }
-
-
 
 // Create a client instance
   
@@ -67,6 +66,11 @@ function prueba(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  document.getElementById("sensor").innerHTML=message.payloadString;
+  }
+
+  function historial(message){
+    console.log("Historial: "+message.payloadString);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
   
